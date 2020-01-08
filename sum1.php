@@ -10,7 +10,7 @@ Total : <input type="text" name="total" id="total"/>
 
 
     <script type="text/javascript">
-function findTotal(){
+    function findTotal(){
     var arr = document.getElementsByName('qty');
     var tot=0;
     for(var i=0;i<arr.length;i++){
@@ -18,6 +18,6 @@ function findTotal(){
             tot += parseInt(arr[i].value);
     }
     document.getElementById('total').value = tot;
-}
-
+    }
+ 
     </script>
