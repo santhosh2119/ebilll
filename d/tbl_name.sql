@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbl_name` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL
+`fname` varchar(250) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
