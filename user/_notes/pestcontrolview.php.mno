@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_Recordset1" value="name:sno;datatype:int,name:ownerid;datatype:int,name:invoiceno;datatype:string,name:cname;datatype:string,name:mobile;datatype:string,name:services;datatype:string,name:cps;datatype:string,name:cpe;datatype:string,name:tamount;datatype:string,name:paidamount;datatype:string,name:date;datatype:string,name:time;datatype:string" />
+	<infoitem key="UD_Recordset2" value="name:id;datatype:int,name:name;datatype:string,name:mobile;datatype:string,name:password;datatype:string,name:businessname;datatype:string,name:city;datatype:string,name:district;datatype:string,name:state;datatype:string,name:pincode;datatype:string,name:btpye;datatype:string,name:logo;datatype:string,name:GST;datatype:string,name:dateofjoin;datatype:string,name:expirydate;datatype:string,name:note;datatype:string" />
+	<infoitem key="UD_Recordset3" value="name:id;datatype:int,name:ownerid;datatype:string,name:invoiceno;datatype:string,name:pamount;datatype:string,name:date;datatype:string,name:time;datatype:string" />
+</info>
