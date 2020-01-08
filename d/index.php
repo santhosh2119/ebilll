@@ -42,7 +42,7 @@ if (isset($_SERVER['QUERY_STRING'])) {
 
 $connect = mysqli_connect("localhost", "root", "", "ebils");
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "add_name")) {
-$connect = mysqli_connect("localhost", "root", "", "ebils");
+
 $number = count($_POST["name"]);
 $numbers = count($_POST["fname"]);
 $cname=$_POST['cname'];
