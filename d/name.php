@@ -1,13 +1,15 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "testing");
+$connect = mysqli_connect("localhost", "root", "", "ebils");
 $number = count($_POST["name"]);
-if($number > 1)
+$numbers = count($_POST["fname"]);
+if($number > 1||$numbers > 1)
 {
 	for($i=0; $i<$number; $i++)
+		for($i=0; $i<$numbers; $i++)
 	{
-		if(trim($_POST["name"][$i] != ''))
+		if(trim($_POST["name"][$i] != ''||$_POST["fname"][$i] != ''))
 		{
-			$sql = "INSERT INTO tbl_name(name) VALUES('".mysqli_real_escape_string($connect, $_POST["name"][$i])."')";
+				$sql = "INSERT INTO tbl_name(name,fname) VALUES('".mysqli_real_escape_string($connect,$_POST["name"][$i])."','".mysqli_real_escape_string($connect,$_POST["fname"][$i])."')";
 			mysqli_query($connect, $sql);
 		}
 	}
