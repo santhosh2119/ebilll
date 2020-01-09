@@ -1,0 +1,48 @@
+<html>
+<body>
+    <input class="form-control" id="price">Price
+  <input class="form-control" id="price">Price
+  <input class="form-control" id="price">Price
+  <input class="form-control" id="price">Price
+ <input type='text'      id='totalPrice' class="form-has-success" name="total"  />total
+                                        
+    <br><br>
+    <input id="discount" value="0">%
+    <br><br>
+    <button onchange="getPrice()">
+Get total
+</button>
+    <br><br>
+    <input readonly id="total">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js "></script>
+ 
+<script>
+// we used jQuery 'keyup' to trigger the computation as the user type
+
+ 
+$('.form-control').keyup(function () {
+ 
+    // initialize the sum (total price) to zero
+    var sum = 0;
+     
+    // we use jQuery each() to loop through all the textbox with 'price' class
+    // and compute the sum for each loop
+    $('.form-control').each(function() {
+        sum += Number($(this).val());
+    });
+     
+    // set the computed value to 'totalPrice' textbox
+    $('#totalPrice').val(sum);
+     
+});
+</script>
+    <script>
+        getPrice = function() {
+            var numVal1 = Number(document.getElementById("totalPrice").value);
+            var numVal2 = Number(document.getElementById("discount").value) / 100;
+            var totalValue = numVal1 - (numVal1 * numVal2)
+            document.getElementById("total").value = totalValue.toFixed(2);
+        }
+    </script>
+</body>
+</html>
