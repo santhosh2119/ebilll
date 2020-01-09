@@ -1,15 +1,22 @@
+
+  
 <html>
 <body>
-    <input class="form-control" id="price">Price
-  <input class="form-control" id="price">Price
-  <input class="form-control" id="price">Price
-  <input class="form-control" id="price">Price
- <input type='text'      id='totalPrice' class="form-has-success" name="total"  />total
-                                        
+    <input class="form-control" name="price" id="price">Price
+  <input class="form-control" id="price" name="price">Price
+  <input class="form-control" id="price" name="price">Price
+  <input class="form-control" id="price" name="price">Price
+ <input type='text'      id='totalPrice' class="form-control1" name="total"  />total
+  <input type='text'      id='state' class="form-control1"  value="6.4" /> staegst
+  <input type='text'      id='jjjstate' class="form-control1"  /> staegst
+
+  <input id="stategst" value="0" class="form-control1">sate gst after add
+   <input id="statehow" value="0">sate gst how much
+                                      
     <br><br>
     <input id="discount" value="0">%
     <br><br>
-    <button onchange="getPrice()">
+    <button onclick="getPrice()">
 Get total
 </button>
     <br><br>
@@ -18,27 +25,44 @@ Get total
  
 <script>
 // we used jQuery 'keyup' to trigger the computation as the user type
-
  
 $('.form-control').keyup(function () {
+    var arr = document.getElementsByName('price');
+    var tots=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tots += parseInt(arr[i].value);
+    }
+    document.getElementById('totalPrice').value = tots;
+
+
+ var numVal1 = Number(document.getElementById("totalPrice").value);
+            var numVal2 = Number(document.getElementById("state").value) / 100;
+	 var statehow = numVal1 * numVal2
+            var totalValue = numVal1 + (numVal1 * numVal2)
+            document.getElementById("stategst").value = totalValue.toFixed(2);
+      document.getElementById("statehow").value = statehow.toFixed(2);
+
+
+});
+</script>
+<script>
+// we used jQuery 'keyup' to trigger the computation as the user type
  
-    // initialize the sum (total price) to zero
-    var sum = 0;
-     
-    // we use jQuery each() to loop through all the textbox with 'price' class
-    // and compute the sum for each loop
-    $('.form-control').each(function() {
-        sum += Number($(this).val());
-    });
-     
-    // set the computed value to 'totalPrice' textbox
-    $('#totalPrice').val(sum);
+$('.form-control1').keyup(function () {
+ 
+    var numVal1 = Number(document.getElementById("totalPrice").value);
+            var numVal2 = Number(document.getElementById("state").value) / 100;
+	 var statehow = numVal1 * numVal2
+            var totalValue = numVal1 + (numVal1 * numVal2)
+            document.getElementById("stategst").value = totalValue.toFixed(2);
+      document.getElementById("statehow").value = statehow.toFixed(2);
      
 });
 </script>
     <script>
         getPrice = function() {
-            var numVal1 = Number(document.getElementById("totalPrice").value);
+            var numVal1 = Number(document.getElementById("stategst").value);
             var numVal2 = Number(document.getElementById("discount").value) / 100;
             var totalValue = numVal1 - (numVal1 * numVal2)
             document.getElementById("total").value = totalValue.toFixed(2);
